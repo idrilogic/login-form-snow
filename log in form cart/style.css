@@ -1,0 +1,150 @@
+:root {
+    --height: 100vh;
+    --width: 100%;
+}
+body {
+    padding: 0;margin: 0;
+}
+.container {
+    position: relative;
+    height: var(--height);
+    width: var(--width);
+    display: flex;
+    align-items: center;justify-content: center;
+}
+
+.image {
+    position: absolute;
+    height: var(--height);
+    width: var(--width)  
+}
+
+img{
+    height: var(--height);
+    width: var(--width);
+}
+
+.content {
+    background-color: transparent;
+    height: var(--height);
+    width: var(--width);
+    z-index: 10;
+
+    display: flex;justify-content: center;align-items: center;
+}
+
+.card {
+    position: relative;
+    font-family: "consolas", sans-serif;
+    padding: 30px 12px;
+    margin: 0px 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    width: 400px;
+    height: 300px;
+    display: flex;justify-content: center;align-items: center;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: 1s;
+}
+
+
+.title {
+    text-align: center;
+}
+
+.same input{
+    width: 310px;
+    height: 5vh;
+    margin: 3% 0px;
+    padding: 0px 16px;
+    font-size: 16px;
+    border-radius: 5px;border: 0;outline: 0;
+    
+}
+
+.same input:focus{
+    border-radius: 5px;border: 0;outline: 2px rgb(5, 255, 234) solid;
+}
+
+.flexthings {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    float: right;
+}
+
+.btn input {
+    cursor: pointer;
+    padding: 6px 12px;
+    border: 0;outline: 0;
+    border-radius: 10px;
+    background-color: rgb(209, 209, 209);
+    transition: 0.4s;
+    font-weight: bold;
+}
+
+.btn input:hover {
+    transition: 0.4s;
+    box-shadow: inset 0px -30px 0px 0px rgb(201, 48, 10);
+    color: cornsilk;
+}
+
+.edit {
+    margin-top: 10%;
+}
+.p {
+    height: 3vh;
+}
+.edit .p a{
+    color: rgb(0, 110, 255);
+    text-decoration: none;
+}
+
+.edit .p a:hover{
+    color: rgb(70, 72, 75);
+    text-decoration: underline;
+}
+
+
+@media  screen and (max-width: 500px) {
+    .card {
+        width: 340px;
+        height: 300px;
+        transition: 1s;
+        background-color: transparent;
+    }
+
+    .card::before {
+        content: "";
+        background-image: conic-gradient(rgba(0, 247, 255, 0.6) 100deg, transparent 20deg);
+        position: absolute;
+        width: 150%;height: 150%;
+        animation: rotate 4s linear infinite;
+        display: flex;justify-content: center;align-items: center;
+        z-index: -20;
+        border-radius: 10px;
+    }
+
+    .card::after {
+        content: "";
+        background-color: rgba(252, 252, 252, 1);
+        position: absolute;
+        z-index: -10;
+        width: 97%;height: 97%;
+        border-radius: 10px;
+        display: flex;justify-content: center;align-items: center;
+    }
+
+    @keyframes rotate {
+        0%{transform: rotate(0deg);}
+        100%{transform: rotate(360deg);}
+    }
+    .same input{
+        width: 270px;
+    }
+}
